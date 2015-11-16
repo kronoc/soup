@@ -1,0 +1,21 @@
+SOUP Streams Over Unsupported Protocals
+
+SOUP is a small HTTP Streaming Service which proxies streams. Its intention is to proxy modern streaming technologies (HLS etc..) and transcode them to an MP3 stream, with the intention of serving that content to legacy devices on a LAN (eg old internet radios). Once deployed on a machine on the LAN, you call it thusly:
+
+http://myserver:2010/?stream=http://www.somewhere.test/high-quality-stream-hls.m3u8
+
+How it works:
+
+Client opens http request
+SOAP takes stream url as a parameter
+Creates a fifo pipe
+Mplayer plays url, streams wav output to fifo pipe
+Pipe is transcoded to mp3 and returned as response stream
+
+On client disconnect the mplayer process is killed and the pipe deleted.
+
+
+Dependencies:
+
+MPlayer
+Python
