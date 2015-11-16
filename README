@@ -1,4 +1,4 @@
-SOUP Streams Over Unsupported Protocals
+SOUP Streams Over Unsupported Protocols
 
 SOUP is a small HTTP Streaming Service which proxies streams. Its intention is to proxy modern streaming technologies (HLS etc..) and transcode them to an MP3 stream, with the intention of serving that content to legacy devices on a LAN (eg old internet radios). Once deployed on a machine on the LAN, you call it thusly:
 
